@@ -6,7 +6,6 @@ class Exercise:
 
     def __init__(self, duration: int, distance: int):
         super().__init__()
-        print(duration)
         self.durationInMilliseconds = duration * 1000
         self.distance = distance
 
@@ -27,7 +26,6 @@ def load_configuration(filename='exercise.csv'):
                 configuration.piste_distance = int(row['distance'])
                 first = False
                 continue
-            print(row['time'])
             configuration.exercises.append(Exercise(timeparse(row['time']), int(row['distance'])))
     
     return configuration
