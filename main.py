@@ -59,6 +59,6 @@ for exercise in configuration.exercises:
 sound = sound.append(AudioSegment.from_wav('resources/success.wav'), crossfade=0)
 
 print('\nBuilding audio file... This may take several seconds...')
-sound.export('output/result.mp3')
-print(f'✅ Audio created: ./output/result.mp3 Duration: {sound.duration_seconds}s')
+sound.export('result.mp3')
+print(f'✅ Audio created: ./result.mp3 Duration: {sound.duration_seconds}s')
 # play(sound)
