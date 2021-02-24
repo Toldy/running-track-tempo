@@ -6,6 +6,6 @@ class Exercise:
         self.distance = distance
 
 class Configuration:
-    beeps_per_tour = 0
+    beeps_per_lap = 0
     piste_distance = 0
     exercises = []

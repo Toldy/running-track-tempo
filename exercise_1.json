@@ -1,0 +1,44 @@
+{
+    "track": {
+        "length": 400,
+        "beeps_per_lap": 4
+    },
+    "exercices": [
+        {
+            "time": "464s",
+            "distance": 2000
+        },
+        {
+            "time": "114s",
+            "distance": 400
+        },
+        {
+            "time": "364s",
+            "distance": 1600
+        },
+        {
+            "time": "114s",
+            "distance": 400
+        },
+        {
+            "time": "266s",
+            "distance": 1200
+        },
+        {
+            "time": "114s",
+            "distance": 400
+        },
+        {
+            "time": "173s",
+            "distance": 800
+        },
+        {
+            "time": "114s",
+            "distance": 400
+        },
+        {
+            "time": "81s",
+            "distance": 400
+        }
+    ]
+}

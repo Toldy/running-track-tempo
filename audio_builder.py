@@ -12,7 +12,7 @@ class AudioBuilder:
         self.sound = empty_sound()
 
         for exercise in configuration.exercises:
-            self.sound = self.sound.append(self.__exercie_to_sound(exercise, configuration.piste_distance, configuration.beeps_per_tour), crossfade=0)
+            self.sound = self.sound.append(self.__exercise_to_sound(exercise, configuration.piste_distance, configuration.beeps_per_lap), crossfade=0)
         self.sound = self.sound.append(AudioSegment.from_wav('resources/success.wav'), crossfade=0)
 
     def build(self):
@@ -21,15 +21,15 @@ class AudioBuilder:
     def duration(self):
         return self.sound.duration_seconds
 
-    def __exercie_to_sound(self, exercise: Exercise, piste_distance, beeps_per_tour):
+    def __exercise_to_sound(self, exercise: Exercise, piste_distance, beeps_per_lap):
         beep_of_1_second = build_beep(1)
         one_tour_duration = exercise.durationInMilliseconds * piste_distance / exercise.distance
-        between_beeps_duration = one_tour_duration / beeps_per_tour
+        between_beeps_duration = one_tour_duration / beeps_per_lap
 
         print('+ [NEW STEP]')
         print(f'Goal: {exercise.distance} meters in {exercise.durationInMilliseconds / 1000} seconds')
-        print(f'Lap time:  {one_tour_duration / 1000}s')
-        print(f'Time between beeps: {between_beeps_duration / 1000}s')
+        print(f'Lap time:  {round(one_tour_duration / 1000, 2)}s')
+        print(f'Time between beeps: {round(between_beeps_duration / 1000, 2)}s')
 
         # Build audio
         sound = AudioSegment.silent(0)
