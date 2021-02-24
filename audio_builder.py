@@ -16,7 +16,7 @@ class AudioBuilder:
         self.sound = self.sound.append(AudioSegment.from_wav('resources/success.wav'), crossfade=0)
 
     def build(self):
-        self.sound.export('result.mp3')
+        self.sound.export(f'{self.output_name}.mp3')
 
     def duration(self):
         return self.sound.duration_seconds

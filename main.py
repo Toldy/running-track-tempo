@@ -10,7 +10,7 @@ print(f'{configuration.beeps_per_tour} beeps per lap\n')
 
 
 audio_builder = AudioBuilder()
-audio_builder.output_name = ''
+audio_builder.output_name = 'exercice'
 audio_builder.load(configuration)
 
 print('\nBuilding audio file... This may take several seconds...')
