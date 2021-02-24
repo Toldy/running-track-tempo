@@ -1,3 +1,5 @@
+![Running track tempo](https://raw.githubusercontent.com/Toldy/running-track-tempo/master/running-track-tempo.png)
+
 # running-track-tempo
 Generator of audio file to keep running at the right speed around the track
 
