@@ -1,6 +1,7 @@
 from exercise_loader import load_configuration
 from exercise_loader import Exercise
 from audio_builder import AudioBuilder
+from countdown_helper import CountdownHelper
 import sys
 import logger
 
@@ -16,4 +17,7 @@ audio_builder.load(configuration)
 
 print('\nBuilding audio file... This may take several seconds...')
 audio_builder.build()
+
+CountdownHelper.clear_resources()
+
 print(f'✅ Audio created: ./{audio_builder.output_name}.mp3 Duration: {round(audio_builder.duration(), 2)}s')

@@ -1,6 +1,8 @@
 from pydub import AudioSegment
 from pydub.playback import play
 from models import *
+from countdown_helper import CountdownHelper
+
 import logger
 
 class AudioBuilder:
@@ -13,6 +15,11 @@ class AudioBuilder:
 
         # output_name is exercise_name
         self.output_name = configuration.exercise_name
+
+        countdown_helper = CountdownHelper()
+        CountdownHelper.new_countdown()
+
+        self.sound = self.sound.append(AudioSegment.from_file(CountdownHelper.file_name), crossfade=0)
 
         for exercise in configuration.exercises:
             self.sound = self.sound.append(self.__exercise_to_sound(exercise, configuration.piste_distance, configuration.beeps_per_lap), crossfade=0)
