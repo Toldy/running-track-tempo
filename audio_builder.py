@@ -11,6 +11,9 @@ class AudioBuilder:
     def load(self, configuration):
         self.sound = empty_sound()
 
+        # output_name is exercise_name
+        self.output_name = configuration.exercise_name
+
         for exercise in configuration.exercises:
             self.sound = self.sound.append(self.__exercise_to_sound(exercise, configuration.piste_distance, configuration.beeps_per_lap), crossfade=0)
         self.sound = self.sound.append(AudioSegment.from_wav('resources/success.wav'), crossfade=0)

@@ -1,20 +1,26 @@
 import logger
 import csv
 import json
+import os
 
 from pytimeparse.timeparse import timeparse
 from models import *
 
 def load_configuration(filename='exercise.csv'):
     if filename.endswith('.csv'):
-        return load_csv(filename)
+        configuration = load_csv(filename)
     elif filename.endswith('.json'):
-        return load_json(filename)
+        configuration = load_json(filename)
+
+    # exercise_name is exercise's filename
+    configuration.exercise_name = os.path.splitext(filename)[0]
+
+    return configuration
 
 def load_csv(filename):
     configuration = Configuration()
     first = True
-    
+
     with open(filename) as configuration_file:
         reader = csv.DictReader(configuration_file)
         for row in reader:
